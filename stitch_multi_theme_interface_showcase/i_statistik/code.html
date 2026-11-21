@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="tr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Başvuru Takip — İstatistik</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#233DFF',
+        'on-primary': '#FFFFFF',
+        'secondary': '#FFC700',
+        'on-secondary': '#111111',
+        'cream': '#FFFDF5',
+        'surface': '#FFFFFF',
+        'on-surface': '#111111',
+        'ink': '#111111',
+        'ink-soft': '#4B4B4B',
+        'cobalt': '#233DFF',
+        'on-cobalt': '#FFFFFF',
+        'cobalt-soft': '#E6E9FF',
+        'on-cobalt-soft': '#111111',
+        'marigold': '#FFC700',
+        'on-marigold': '#111111',
+        'marigold-soft': '#FFF4CC',
+        'on-marigold-soft': '#111111',
+        'coral': '#D91E48',
+        'on-coral': '#FFFFFF',
+        'coral-soft': '#FFE5EA',
+        'on-coral-soft': '#111111',
+        'mint': '#00D084',
+        'on-mint': '#111111',
+        'mint-soft': '#DDFBEF',
+        'on-mint-soft': '#111111',
+        'lilac': '#C084FC',
+        'on-lilac': '#111111',
+        'lilac-soft': '#F3E8FF',
+        'on-lilac-soft': '#111111',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '16px',
+        'full': '9999px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        '2xl': '32px',
+      },
+      fontFamily: {
+        'display': ['"Bricolage Grotesque"', 'sans-serif'],
+        'headline': ['"Bricolage Grotesque"', 'sans-serif'],
+        'title': ['"Bricolage Grotesque"', 'sans-serif'],
+        'body': ['"DM Sans"', 'sans-serif'],
+        'label': ['"DM Sans"', 'sans-serif'],
+        'mono': ['"Space Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '42px', letterSpacing: '-0.5px', fontWeight: '800' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.25px', fontWeight: '800' }],
+        'headline-lg': ['22px', { lineHeight: '28px', letterSpacing: '-0.25px', fontWeight: '800' }],
+        'headline-md': ['17px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-sm': ['15px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '700' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '19px', letterSpacing: '0px', fontWeight: '500' }],
+        'label-md': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '700' }],
+        'mono-sm': ['11px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '700' }],
+      },
+      transitionDuration: {
+        'press': '100ms',
+        'surface-enter': '180ms',
+      },
+      transitionDelay: {
+        'press': '0ms',
+        'surface-enter': '0ms',
+      },
+      transitionTimingFunction: {
+        'press': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+  </style>
+</head>
+<body class="bg-cream text-ink font-body antialiased selection:bg-marigold selection:text-ink">
+  <div class="min-h-[1024px] flex flex-col" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <header class="border-b-2 border-ink bg-surface px-xl py-md">
+      <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-lg">
+        <div class="flex items-center gap-md">
+          <div class="w-10 h-10 bg-cobalt text-on-cobalt border-2 border-ink shadow-[2px_2px_0px_#111111] rounded flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px]">bolt</span>
+          </div>
+          <span class="font-display text-headline-lg text-ink">Başvuru Takip</span>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-sm" aria-label="Ana menü">
+          <a href="#" class="px-lg py-sm rounded border-2 border-transparent hover:border-ink hover:bg-cream font-label text-label-md text-ink">Pano</a>
+          <a href="#" class="px-lg py-sm rounded border-2 border-transparent hover:border-ink hover:bg-cream font-label text-label-md text-ink">Başvurular</a>
+          <a href="#" class="px-lg py-sm rounded border-2 border-transparent hover:border-ink hover:bg-cream font-label text-label-md text-ink">Takvim</a>
+          <a href="#" class="px-lg py-sm rounded border-2 border-transparent hover:border-ink hover:bg-cream font-label text-label-md text-ink">Kişiler</a>
+          <a href="#" class="px-lg py-sm rounded border-2 border-transparent hover:border-ink hover:bg-cream font-label text-label-md text-ink">Belgeler</a>
+          <a href="#" aria-current="page" class="px-lg py-sm rounded bg-marigold border-2 border-ink shadow-[2px_2px_0px_#111111] font-label text-label-md text-ink">İstatistik</a>
+          <a href="#" class="px-lg py-sm rounded border-2 border-transparent hover:border-ink hover:bg-cream font-label text-label-md text-ink">Ayarlar</a>
+        </nav>
+
+        <div class="flex items-center gap-md">
+          <div class="relative hidden lg:block">
+            <span class="material-symbols-outlined text-[18px] text-ink absolute left-3 top-1/2 -translate-y-1/2">search</span>
+            <input type="text" placeholder="Hızlı ara..." class="w-48 h-10 pl-9 pr-md bg-cream border-2 border-ink rounded text-body-sm font-medium placeholder:text-ink-soft focus:outline-none focus:bg-surface focus-visible:ring-2 focus-visible:ring-cobalt">
+          </div>
+          <button type="button" class="h-10 px-lg bg-cobalt text-on-cobalt border-2 border-ink shadow-[2px_2px_0px_#111111] rounded font-label text-label-md inline-flex items-center gap-sm">
+            <span class="material-symbols-outlined text-[18px]">add</span>
+            <span>Yeni Başvuru</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-[1440px] w-full mx-auto px-xl py-xl flex flex-col gap-xl">
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+        <div class="bg-surface border-2 border-ink shadow-[4px_4px_0px_#111111] rounded-lg p-lg">
+          <div class="font-mono text-mono-sm text-ink-soft">TOPLAM BAŞVURU</div>
+          <div class="font-display text-display-lg text-ink tabular-nums mt-xs">16</div>
+          <div class="font-mono text-mono-sm text-cobalt mt-xs">12 aktif · 4 kapalı</div>
+        </div>
+        <div class="bg-marigold-soft border-2 border-ink shadow-[4px_4px_0px_#111111] rounded-lg p-lg">
+          <div class="font-mono text-mono-sm text-ink-soft">YANIT ORANI</div>
+          <div class="font-display text-display-lg text-ink tabular-nums mt-xs">%64</div>
+          <div class="font-mono text-mono-sm text-ink mt-xs">Ort. 4.2 gün yanıt</div>
+        </div>
+        <div class="bg-cobalt-soft border-2 border-ink shadow-[4px_4px_0px_#111111] rounded-lg p-lg">
+          <div class="font-mono text-mono-sm text-ink-soft">MÜLAKAT DÖNÜŞÜMÜ</div>
+          <div class="font-display text-display-lg text-ink tabular-nums mt-xs">%38</div>
+          <div class="font-mono text-mono-sm text-ink mt-xs">5 süreç teknik aşamada</div>
+        </div>
+        <div class="bg-mint-soft border-2 border-ink shadow-[4px_4px_0px_#111111] rounded-lg p-lg">
+          <div class="font-mono text-mono-sm text-ink-soft">TEKLİF SAYISI</div>
+          <div class="font-display text-display-lg text-ink tabular-nums mt-xs">2</div>
+          <div class="font-mono text-mono-sm text-ink mt-xs">Ort. ₺140.000/ay</div>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-xl">
+        <div class="bg-surface border-2 border-ink shadow-[4px_4px_0px_#111111] rounded-lg p-xl flex flex-col gap-lg">
+          <div>
+            <h2 class="font-display text-headline-lg text-ink">Aşama Hunisi</h2>
+            <p class="font-body text-body-sm text-ink-soft">Başvurudan teklife ilerleme dağılımı</p>
+          </div>
+          <div class="flex flex-col gap-md">
+            <div class="flex items-center gap-md">
+              <span class="w-28 font-mono text-mono-sm">Başvuruldu</span>
+              <div class="flex-1 h-6 bg-cream border-2 border-ink rounded-sm overflow-hidden">
+                <div class="h-full bg-cobalt w-full"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-mono-sm tabular-nums">14</span>
+            </div>
+            <div class="flex items-center gap-md">
+              <span class="w-28 font-mono text-mono-sm">Ön Görüşme</span>
+              <div class="flex-1 h-6 bg-cream border-2 border-ink rounded-sm overflow-hidden">
+                <div class="h-full bg-lilac w-[64%]"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-mono-sm tabular-nums">9</span>
+            </div>
+            <div class="flex items-center gap-md">
+              <span class="w-28 font-mono text-mono-sm">Mülakat</span>
+              <div class="flex-1 h-6 bg-cream border-2 border-ink rounded-sm overflow-hidden">
+                <div class="h-full bg-coral w-[42%]"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-mono-sm tabular-nums">6</span>
+            </div>
+            <div class="flex items-center gap-md">
+              <span class="w-28 font-mono text-mono-sm">Teklif</span>
+              <div class="flex-1 h-6 bg-cream border-2 border-ink rounded-sm overflow-hidden">
+                <div class="h-full bg-mint w-[18%]"></div>
+              </div>
+              <span class="w-10 text-right font-mono text-mono-sm tabular-nums">2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-surface border-2 border-ink shadow-[4px_4px_0px_#111111] rounded-lg p-xl flex flex-col gap-lg">
+          <div>
+            <h2 class="font-display text-headline-lg text-ink">Kaynak Performansı</h2>
+            <p class="font-body text-body-sm text-ink-soft">Hangi kanaldan daha çok dönüş alınıyor</p>
+          </div>
+          <div class="flex flex-col gap-md">
+            <div class="flex items-center justify-between p-md bg-cream border-2 border-ink rounded">
+              <span class="font-display text-title-sm">Referans</span>
+              <span class="font-mono text-mono-sm bg-mint border border-ink px-sm py-xs rounded-sm">%80 DÖNÜŞ</span>
+            </div>
+            <div class="flex items-center justify-between p-md bg-cream border-2 border-ink rounded">
+              <span class="font-display text-title-sm">LinkedIn</span>
+              <span class="font-mono text-mono-sm bg-marigold border border-ink px-sm py-xs rounded-sm">%55 DÖNÜŞ</span>
+            </div>
+            <div class="flex items-center justify-between p-md bg-cream border-2 border-ink rounded">
+              <span class="font-display text-title-sm">Şirket Sitesi</span>
+              <span class="font-mono text-mono-sm bg-cobalt-soft border border-ink px-sm py-xs rounded-sm">%40 DÖNÜŞ</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+</body></html>

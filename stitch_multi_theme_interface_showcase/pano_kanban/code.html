@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="tr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Başvuru Takip — Neo-Brutalist Stüdyo</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FFFDF5',
+            surface: '#FFFFFF',
+            ink: '#111111',
+            'ink-soft': '#4B4B4B',
+            cobalt: '#233DFF',
+            'cobalt-soft': '#E6E9FF',
+            marigold: '#FFC700',
+            'marigold-soft': '#FFF4CC',
+            coral: '#D91E48',
+            'coral-soft': '#FFE5EA',
+            mint: '#00D084',
+            'mint-soft': '#DDFBEF',
+            lilac: '#C084FC',
+            'lilac-soft': '#F3E8FF'
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'system-ui', 'sans-serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace']
+          },
+          boxShadow: {
+            brutal: '4px 4px 0px #111111',
+            'brutal-sm': '2px 2px 0px #111111'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&amp;family=DM+Sans:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }
+  </style>
+</head>
+<body class="bg-cream text-ink font-body antialiased selection:bg-marigold selection:text-ink">
+  <div class="min-h-[1024px] flex flex-col" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <!-- Bold Studio Header -->
+    <header class="border-b-2 border-ink bg-surface px-6 py-3">
+      <div class="max-w-[1440px] mx-auto flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-cobalt text-surface border-2 border-ink shadow-brutal-sm rounded-lg flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px]">bolt</span>
+          </div>
+          <span class="font-display text-[22px] font-extrabold tracking-tight text-ink">Başvuru Takip</span>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-2" aria-label="Ana menü">
+          <a href="#" aria-current="page" class="px-3.5 py-1.5 rounded-lg bg-marigold border-2 border-ink shadow-brutal-sm font-bold text-[13px] text-ink">Pano</a>
+          <a href="#" class="px-3.5 py-1.5 rounded-lg border-2 border-transparent hover:border-ink hover:bg-cream font-bold text-[13px] text-ink">Başvurular</a>
+          <a href="#" class="px-3.5 py-1.5 rounded-lg border-2 border-transparent hover:border-ink hover:bg-cream font-bold text-[13px] text-ink">Takvim</a>
+          <a href="#" class="px-3.5 py-1.5 rounded-lg border-2 border-transparent hover:border-ink hover:bg-cream font-bold text-[13px] text-ink">Kişiler</a>
+          <a href="#" class="px-3.5 py-1.5 rounded-lg border-2 border-transparent hover:border-ink hover:bg-cream font-bold text-[13px] text-ink">Belgeler</a>
+          <a href="#" class="px-3.5 py-1.5 rounded-lg border-2 border-transparent hover:border-ink hover:bg-cream font-bold text-[13px] text-ink">İstatistik</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <div class="relative hidden lg:block">
+            <span class="material-symbols-outlined text-[18px] text-ink absolute left-3 top-1/2 -translate-y-1/2">search</span>
+            <input type="text" placeholder="Hızlı ara..." class="w-48 h-10 pl-9 pr-3 bg-cream border-2 border-ink rounded-lg text-[13px] font-medium placeholder:text-ink-soft focus:outline-none focus:bg-surface focus-visible:ring-2 focus-visible:ring-cobalt">
+          </div>
+          <button class="h-10 px-4 bg-cobalt text-surface border-2 border-ink shadow-brutal-sm hover:translate-x-[1px] hover:translate-y-[1px] rounded-lg font-bold text-[13px] inline-flex items-center gap-1.5 transition-transform">
+            <span class="material-symbols-outlined text-[18px]">add</span>
+            <span>Yeni Başvuru</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-[1440px] w-full mx-auto px-6 py-6 flex flex-col gap-6">
+      <!-- Marigold Today Callout + Filter Strip -->
+      <section class="grid grid-cols-12 gap-4 items-center">
+        <div class="col-span-12 lg:col-span-7 bg-marigold border-2 border-ink shadow-brutal rounded-xl p-4 flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-lg bg-surface border-2 border-ink flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[22px] text-ink">campaign</span>
+            </div>
+            <div>
+              <div class="font-mono text-[11px] font-bold uppercase text-ink">BUGÜNÜN GÜNDEMİ · 14:30</div>
+              <div class="font-display text-[17px] font-extrabold text-ink">Midas — Staff Product Designer Portfolyo Sunumu</div>
+            </div>
+          </div>
+          <button class="px-3.5 py-2 bg-surface border-2 border-ink shadow-brutal-sm rounded-lg text-[12px] font-bold shrink-0 hover:bg-cream">
+            Detayı Aç
+          </button>
+        </div>
+
+        <div class="col-span-12 lg:col-span-5 flex flex-wrap items-center justify-end gap-2">
+          <button class="px-3.5 py-2 rounded-lg bg-ink text-surface border-2 border-ink font-bold text-[12.5px]">Tümü (12)</button>
+          <button class="px-3.5 py-2 rounded-lg bg-surface border-2 border-ink shadow-brutal-sm font-bold text-[12.5px] hover:bg-mint-soft">Uzaktan</button>
+          <button class="px-3.5 py-2 rounded-lg bg-surface border-2 border-ink shadow-brutal-sm font-bold text-[12.5px] hover:bg-coral-soft">Yüksek Öncelik</button>
+          <button class="px-3.5 py-2 rounded-lg bg-surface border-2 border-ink shadow-brutal-sm font-bold text-[12.5px] hover:bg-cobalt-soft">Kapalılar (4)</button>
+        </div>
+      </section>
+
+      <!-- Neo-Brutalist 5-Column Kanban -->
+      <section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 items-start">
+        <!-- Col 1: Kaydedildi -->
+        <div class="bg-surface border-2 border-ink shadow-brutal rounded-xl overflow-hidden flex flex-col">
+          <div class="bg-cream border-b-2 border-ink px-3.5 py-2.5 flex items-center justify-between">
+            <h2 class="font-display font-extrabold text-[15px]">Kaydedildi</h2>
+            <span class="font-mono text-[12px] font-bold bg-surface border-2 border-ink px-2 py-0.5 rounded">2</span>
+          </div>
+          <div class="p-3 flex flex-col gap-3">
+            <article class="bg-cream border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer hover:bg-surface">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Hepsiburada</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-surface border border-ink rounded">HİBRİT</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Senior Product Designer</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span>★ 4/5</span>
+                <span>26 KAS</span>
+              </div>
+            </article>
+            <article class="bg-cream border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer hover:bg-surface">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Insider</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-mint-soft border border-ink rounded">UZAKTAN</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">UI/UX Tasarım Uzmanı</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span>B2B SaaS</span>
+                <span>28 KAS</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Col 2: Başvuruldu -->
+        <div class="bg-surface border-2 border-ink shadow-brutal rounded-xl overflow-hidden flex flex-col">
+          <div class="bg-cobalt-soft border-b-2 border-ink px-3.5 py-2.5 flex items-center justify-between">
+            <h2 class="font-display font-extrabold text-[15px]">Başvuruldu</h2>
+            <span class="font-mono text-[12px] font-bold bg-surface border-2 border-ink px-2 py-0.5 rounded">3</span>
+          </div>
+          <div class="p-3 flex flex-col gap-3">
+            <article class="bg-surface border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer hover:bg-cobalt-soft/30">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Peak Games</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-coral text-surface border border-ink rounded">YÜKSEK</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Principal Product Designer</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span class="tabular-nums">₺145.000</span>
+                <span>5G ÖNCE</span>
+              </div>
+            </article>
+            <article class="bg-surface border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer hover:bg-cobalt-soft/30">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">iyzico</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-mint-soft border border-ink rounded">UZAKTAN</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Design Engineer</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span>★ 4/5</span>
+                <span>8G ÖNCE</span>
+              </div>
+            </article>
+            <article class="bg-surface border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer hover:bg-cobalt-soft/30">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Getir</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-cream border border-ink rounded">HİBRİT</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">UX Researcher</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span>★ 3/5</span>
+                <span>12G ÖNCE</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Col 3: Ön Görüşme -->
+        <div class="bg-surface border-2 border-ink shadow-brutal rounded-xl overflow-hidden flex flex-col">
+          <div class="bg-lilac-soft border-b-2 border-ink px-3.5 py-2.5 flex items-center justify-between">
+            <h2 class="font-display font-extrabold text-[15px]">Ön Görüşme</h2>
+            <span class="font-mono text-[12px] font-bold bg-surface border-2 border-ink px-2 py-0.5 rounded">2</span>
+          </div>
+          <div class="p-3 flex flex-col gap-3">
+            <article class="bg-lilac-soft/40 border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Trendyol</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-marigold border border-ink rounded">YARIN</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Lead UX Designer</div>
+              <div class="font-mono text-[11px] font-bold bg-surface border border-ink px-2 py-1 rounded">
+                11:00 · İK TANISMA
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span class="tabular-nums">₺130.000</span>
+                <span>★ 5/5</span>
+              </div>
+            </article>
+            <article class="bg-surface border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Dream Games</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-cream border border-ink rounded">OFİS</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">UI Designer</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span>★ 4/5</span>
+                <span>25 KAS</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Col 4: Mülakat -->
+        <div class="bg-surface border-2 border-ink shadow-brutal rounded-xl overflow-hidden flex flex-col">
+          <div class="bg-coral-soft border-b-2 border-ink px-3.5 py-2.5 flex items-center justify-between">
+            <h2 class="font-display font-extrabold text-[15px]">Mülakat</h2>
+            <span class="font-mono text-[12px] font-bold bg-surface border-2 border-ink px-2 py-0.5 rounded">3</span>
+          </div>
+          <div class="p-3 flex flex-col gap-3">
+            <article class="bg-marigold-soft border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Midas</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-coral text-surface border border-ink rounded">BUGÜN</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Staff Product Designer</div>
+              <div class="font-mono text-[11px] font-bold bg-surface border border-ink px-2 py-1 rounded">
+                14:30 · PORTFOLYO
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span class="tabular-nums">₺160.000</span>
+                <span>★ 5/5</span>
+              </div>
+            </article>
+            <article class="bg-surface border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Papara</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-mint-soft border border-ink rounded">UZAKTAN</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Design Systems Lead</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span class="text-coral">ÖDEV: 24 KAS</span>
+                <span>★ 5/5</span>
+              </div>
+            </article>
+            <article class="bg-surface border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Picnic</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-mint-soft border border-ink rounded">UZAKTAN</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Product Designer (EU)</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span class="tabular-nums">€5.400/AY</span>
+                <span>27 KAS</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Col 5: Teklif -->
+        <div class="bg-surface border-2 border-ink shadow-brutal rounded-xl overflow-hidden flex flex-col">
+          <div class="bg-mint border-b-2 border-ink px-3.5 py-2.5 flex items-center justify-between">
+            <h2 class="font-display font-extrabold text-[15px]">Teklif</h2>
+            <span class="font-mono text-[12px] font-bold bg-surface border-2 border-ink px-2 py-0.5 rounded">2</span>
+          </div>
+          <div class="p-3 flex flex-col gap-3">
+            <article class="bg-mint-soft border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">KolayİK</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-ink text-surface rounded">TEKLİF</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Senior Product Designer</div>
+              <div class="font-mono text-[11px] font-bold bg-surface border border-ink px-2 py-1 rounded">
+                SON KARAR: 29 KAS
+              </div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span class="tabular-nums">₺138.000</span>
+                <span>★ 4/5</span>
+              </div>
+            </article>
+            <article class="bg-surface border-2 border-ink shadow-brutal-sm rounded-lg p-3 flex flex-col gap-2 cursor-pointer">
+              <div class="flex items-start justify-between gap-2">
+                <div class="font-display font-bold text-[15px]">Paraşüt</div>
+                <span class="font-mono text-[10px] font-bold px-2 py-0.5 bg-cream border border-ink rounded">HİBRİT</span>
+              </div>
+              <div class="text-[13px] font-medium text-ink-soft">Design Lead</div>
+              <div class="flex items-center justify-between pt-2 border-t border-ink/20 font-mono text-[11px] font-bold">
+                <span class="tabular-nums">₺142.000</span>
+                <span>SÖZLEŞME</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+</body></html>
